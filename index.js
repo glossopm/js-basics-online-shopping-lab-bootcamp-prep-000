@@ -41,7 +41,7 @@ function viewCart() {
     var contents = ""
     for (var i = 0; i < cart.length; ++i) {
       names = cart[i]
-      if (cart.length < i - 1) {
+      if (i - 1 < cart.length) {
         contents += `${names.itemName} at $${names.itemPrice}, `
       }
       else {
