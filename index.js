@@ -17,21 +17,43 @@ function addToCart(item) {
 addToCart("cake")
 addToCart("cheese")
 function viewCart() {
-  if (cart.length > 0) {
+  if (cart.length === 1) {
     var names = {}
     var contents = ""
     for (var i = 0; i < cart.length; ++i) {
       names = cart[i]
-      contents += `${names.itemName}at $${names.itemPrice}, and`
+      contents += `${names.itemName} at $${names.itemPrice}`
+    }
+    return `In your cart, you have ${contents}.`
+  }
+  else if (cart.length === 2) {
+    var names = {}
+    var contents = ""
+    for (var i = 0; i < cart.length; ++i) {
+      names = cart[i]
+      contents += `${names.itemName} at $${names.itemPrice}, and `
+    }
+    contents = contents.slice(0, -6)
+    return `In your cart, you have ${contents}.`
+  }
+  else if (cart.length > 2) {
+    var names = {}
+    var contents = ""
+    for (var i = 0; i < cart.length; ++i) {
+      names = cart[i]
+      contents += `${names.itemName} at $${names.itemPrice}, and `
     }
     contents = contents.slice(0, -2)
     return `In your cart, you have ${contents}.`
   }
+  
   else {
     return "Your shopping cart is empty."
   }
 }
-viewCart()
+
+
+
 function total() {
   // write your code here
 }
