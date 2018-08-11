@@ -14,8 +14,7 @@ function addToCart(item) {
  cart.push(item_object)
  return `${item} has been added to your cart.`
 }
-addToCart("cake")
-addToCart("cheese")
+
 function viewCart() {
   if (cart.length === 1) {
     var names = {}
@@ -56,8 +55,6 @@ function viewCart() {
   }
 }
 
-
-
 function total() {
   var n = 0
   for (var i = 0; i < cart.length; ++i) {
@@ -67,7 +64,17 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
+  var check = 0
+  for (var i = 0; i < cart.length; ++i){
+    if (cart[i].itemName === item) {
+      cart.splice(i,1)
+      check = 1
+      return viewCart()
+  if (check === 0) {
+    return "That item is not in your cart."
+  }
+    }
+  }
 }
 
 function placeOrder(cardNumber) {
