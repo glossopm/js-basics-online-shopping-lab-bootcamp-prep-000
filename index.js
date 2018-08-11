@@ -59,7 +59,11 @@ function viewCart() {
 
 
 function total() {
-  // write your code here
+  var n
+  for (var i = 0; i < cart.length; ++i) {
+    n += cart[i].itemPrice
+  }
+  return `Cart total is $${n}`
 }
 
 function removeFromCart(item) {
