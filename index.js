@@ -45,7 +45,7 @@ function viewCart() {
         contents += `${names.itemName} at $${names.itemPrice}, `
       }
       else {
-        contents += `and ${names.itemName} at $${names.itemPrice}.`
+        contents += `and ${names.itemName} at $${names.itemPrice}`
       }
     }
     return `In your cart, you have ${contents}.`
