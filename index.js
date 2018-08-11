@@ -41,9 +41,13 @@ function viewCart() {
     var contents = ""
     for (var i = 0; i < cart.length; ++i) {
       names = cart[i]
-      contents += `${names.itemName} at $${names.itemPrice}, and `
+      if (cart.length === i) {
+        contents += `${names.itemName} at $${names.itemPrice}, `
+      }
+      else {
+        contents += `and ${names.itemName} at $${names.itemPrice}.`
+      }
     }
-    contents = contents.slice(0, -2)
     return `In your cart, you have ${contents}.`
   }
 
