@@ -46,7 +46,7 @@ function viewCart() {
     contents = contents.slice(0, -2)
     return `In your cart, you have ${contents}.`
   }
-  
+
   else {
     return "Your shopping cart is empty."
   }
